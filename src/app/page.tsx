@@ -1,138 +1,69 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowDown, Github, Mail, Instagram, ArrowRight } from "lucide-react"
-import Typewriter from 'typewriter-effect'
-import { useRouter } from 'next/navigation'
+import { Hammer, Clock, HardHat } from "lucide-react"
 import { ThemeToggle } from '@/app/components'
 
 export default function Home() {
-  const router = useRouter()
-
-  const navigateTo = (path: string) => {
-    router.push(path)
-  }
-
   return (
     <main className="relative min-h-screen">
       {/* Theme Toggle */}
-      <div className="fixed bottom-6 left-6 z-50">
-      <ThemeToggle />
+      <div className="fixed top-6 left-6 z-50">
+        <ThemeToggle />
       </div>
 
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-light dark:bg-gradient-dark min-h-screen flex items-center">
-        <div className="container-custom">
+      {/* Coming Soon Section */}
+      <section className="section-padding bg-gradient-light dark:bg-gradient-dark min-h-screen flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="text-center px-6"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="flex justify-center mb-6"
           >
-            {/* Main Heading with Typing Effect */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl lg:text-7xl font-bold mb-6"
-            >
-              Hey, I&apos;m{" "}
-              <span className="gradient-text">FT Tan</span> 👋
-            </motion.h1>
-
-            {/* Typing Animation One-liner */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl lg:text-2xl text-text-gray dark:text-gray-300 mb-8 h-16 flex items-center justify-center"
-            >
-              <Typewriter
-                options={{
-                  strings: [
-                    "I turn coffee into code ☕",
-                    "I debug with cheeky confidence 🐞",
-                    "I build full-stack dreams ✨",
-                    "I fight merge conflicts by moonlight 🌙",
-                    "I create with bold imagination 🎨"
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  delay: 50,
-                  deleteSpeed: 30,
-                }}
-              />
-
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-            >
-              <button
-                onClick={() => navigateTo('/projects')}
-                className="btn-primary group"
-              >
-                Projects
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => navigateTo('/about')}
-                className="btn-secondary"
-              >
-                About
-              </button>
-              <button
-                onClick={() => navigateTo('/resume')}
-                className="btn-secondary bg-gradient-primary text-white border-none hover:scale-105"
-              >
-                Let&apos;s Talk
-              </button>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="flex justify-center gap-6 mb-12"
-            >
-              {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Mail, href: "mailto:tanft25@gmail.com", label: "Email" },
-                { icon: Instagram, href: "https://instagram.com/ftiannn", label: "Instagram" },
-              ].map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="w-12 h-12 rounded-full bg-white dark:bg-navy-800 
-                           border-2 border-pink-100 dark:border-pink-500/20 
-                           shadow-soft hover:shadow-pink transition-all duration-300
-                           hover:scale-110 flex items-center justify-center
-                           text-primary-pink hover:text-secondary-teal"
-                  aria-label={label}
-                >
-                  <Icon className="h-5 w-5" />
-                </a>
-              ))}
-            </motion.div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-              className="flex justify-center"
-            >
-              <ArrowDown className="h-6 w-6 text-text-gray animate-bounce-gentle" />
-            </motion.div>
+            <HardHat className="w-16 h-16 text-primary-pink animate-bounce-gentle" />
           </motion.div>
-        </div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-4xl lg:text-6xl font-bold mb-4"
+          >
+            Hold Tight! 🛠️
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-xl mx-auto"
+          >
+            I&apos;m still piecing this place together — with duct tape and JavaScript. Check back soon!
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="flex justify-center gap-4"
+          >
+            <span className="flex items-center gap-2 text-text-gray dark:text-gray-300">
+              <Hammer className="w-5 h-5" />
+              Building in progress...
+            </span>
+            <span className="flex items-center gap-2 text-text-gray dark:text-gray-300">
+              <Clock className="w-5 h-5" />
+              ETA: a week (or two) ⏳
+            </span>
+          </motion.div>
+        </motion.div>
       </section>
     </main>
   )
 }
-
