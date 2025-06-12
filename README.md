@@ -3,8 +3,6 @@
 A playful and modern "Coming Soon" page built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.  
 Perfect for showcasing your personal site, side project, or portfolio before the full version is ready.
 
-<!-- ![Preview](https://raw.githubusercontent.com/yourusername/yourrepo/main/assets/demo.gif) -->
-
 ---
 
 ## 🚀 How to Use This

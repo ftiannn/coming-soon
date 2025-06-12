@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/providers/theme-provider'
+import { Footer } from './components'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -22,16 +24,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-light-bg dark:bg-gradient-dark min-h-screen`}>
+      <body 
+        className={`${inter.className} bg-light-bg dark:bg-gradient-dark min-h-screen`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange={false}
         >
-          <main className="pt-16">
             {children}
-          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
