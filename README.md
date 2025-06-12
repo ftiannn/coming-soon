@@ -24,7 +24,14 @@ Or just click the **"Fork"** button on the top right of this page!
 npm install
 ```
 
-### 🧪 3. Run Locally
+### ✨ 3. Update Social Links  
+Update the links to your own profiles in:  
+> `/src/constants/social-links.ts`
+
+Replace the default entries with your actual GitHub, LinkedIn, Twitter, or any other social platforms.  
+These will appear in the “Let’s be internet friends” section at the bottom of the page.
+
+### 🧪 4. Run Locally
 
 ```bash
 npm run dev
@@ -32,12 +39,10 @@ npm run dev
 
 Visit [http://localhost:3000](http://localhost:3000) to see it live.
 
-### 🌐 4. Deploy to Vercel (Recommended)
+### 🌐 5. Deploy
 
-1. Push your forked repo to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your GitHub project
-4. Click **Deploy**
+> Vercel, or
+> Github Pages
 
 ---
 
@@ -48,7 +53,7 @@ You can easily make it your own:
 - **Main page content**: `src/app/page.tsx`
 - **Theme toggle**: already included via `next-themes`
 - **Tailwind config**: customize colors in `tailwind.config.js`
-- **Logo & favicon**: replace `public/favicon.ico` and `assets/icon.png`
+- **Logo & favicon**: replace `public/favicon.ico`
 
 ---
 
